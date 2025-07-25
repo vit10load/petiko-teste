@@ -9,7 +9,7 @@ export default {
     setTimeout(() => {
       state.msg = ""
       state.mostrar = false
-    }, 4000)
+    }, 1500)
   },
 
   [mutationTypes.ALERTA.FECHAR_ALERTA](state) {

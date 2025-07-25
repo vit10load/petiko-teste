@@ -238,8 +238,6 @@ export default {
       const { data } = await this.cadastrarTodo(this.tarefa);
 
       if (data?.id) {
-        this.tarefas.push(data);
-
         this.$store.commit(mutationTypes.ALERTA.EXIBIR_ALERTA, {
           tipo: "success",
           msg: "Tarefa cadastrada com sucesso",
@@ -247,6 +245,9 @@ export default {
       } else {
         throw new Error("Falha ao cadastrar");
       }
+
+      this.carregarTarefas();
+      
     },
 
     async carregarTarefas() {

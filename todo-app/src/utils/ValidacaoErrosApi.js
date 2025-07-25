@@ -29,7 +29,7 @@ class ValidacaoErrosApi extends Error {
       })
 
       LocalStorageManager.removeItem()
-      setTimeout(() => window.location.reload(), 3000)
+      setTimeout(() => window.location.reload(), 500)
     }
   }
 
@@ -50,7 +50,7 @@ class ValidacaoErrosApi extends Error {
       })
 
       LocalStorageManager.removeItem()
-      setTimeout(() => window.location.reload(), 3000)
+      setTimeout(() => window.location.reload(), 500)
     }
   }
 }
