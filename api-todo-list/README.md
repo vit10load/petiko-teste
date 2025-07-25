@@ -25,9 +25,29 @@ Laravel é acessível, poderoso e fornece as ferramentas necessárias para aplic
 
 ## Sobre este projeto
 
-Este projeto consiste em uma **API backend construída com Laravel com PHP VERSAO 8.X**, que serve para gerenciar tarefas dos usuários. A API oferece recursos para cadastro, edição, exclusão e listagem de tarefas, além de autenticação segura utilizando tokens JWT para garantir que cada usuário acesse apenas suas próprias tarefas.
+Este projeto consiste em uma **API backend construída com Laravel com PHP 8.2.27**, que serve para gerenciar tarefas dos usuários. A API oferece recursos para cadastro, edição, exclusão e listagem de tarefas, além de autenticação segura utilizando tokens JWT para garantir que cada usuário acesse apenas suas próprias tarefas.
 
 ---
+
+## Configuração para o banco de dados
+
+Exemplo de variáveis no `.env`:
+
+```env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=todo_app
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+
+```
+
+## Composer
+
+```env
+Versão 2.8.3
+```
 
 ## Como subir a API
 

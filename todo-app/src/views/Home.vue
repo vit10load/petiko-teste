@@ -51,7 +51,7 @@
             </v-menu>
 
             <v-btn
-              :disabled="!valid && !this.usuarioLogado.is_admin"
+              :disabled="!valid"
               depressed
               color="primary"
               @click="salvar"
@@ -192,8 +192,22 @@ export default {
       return `${dia}/${mes}/${ano}`;
     },
 
+    exibirErro(mensagem) {
+      this.$store.commit(mutationTypes.ALERTA.EXIBIR_ALERTA, {
+        tipo: "error",
+        msg: mensagem,
+      });
+    },
+
     async salvar() {
       try {
+        if (!this.usuarioLogado.is_admin) {
+          this.cancelar();
+          this.exibirErro("Usuário não é administrador!")
+          this.carregarTarefas();
+          return;
+        }
+
         if (this.tarefa.id) {
           await this.editarTarefa();
         } else {

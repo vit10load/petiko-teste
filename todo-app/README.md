@@ -100,5 +100,5 @@ petiko-app/
 
 - **Executar testes:**
   ```bash
-    npx jest
+    npm run test:unit
   ```
