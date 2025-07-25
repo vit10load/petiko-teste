@@ -85,12 +85,12 @@ describe("Teste Gerenciar tarefas", () => {
 
   it("cria uma nova tarefa com sucesso", async () => {
     const mockTarefa = {
-      id: 2,
-      title: "Nova Tarefa",
+      id: 1,
+      title: "Tarefa Teste",
       completed: false,
-      data_vencimento: "2025-07-26",
+      data_vencimento: "2025-07-25",
     };
-
+  
     store.hotUpdate({
       modules: {
         todo: {
@@ -104,25 +104,26 @@ describe("Teste Gerenciar tarefas", () => {
         },
       },
     });
-
+  
     wrapper = shallowMount(Home, {
       localVue,
       store,
       vuetify,
     });
-
+  
     wrapper.setData({
       tarefa: {
         title: "Nova Tarefa",
         completed: false,
-        data_vencimento: "2025-07-26",
+        data_vencimento: "2025-07-25",
       },
     });
-
+  
     await wrapper.vm.criarTarefa();
-
+  
     expect(wrapper.vm.tarefas).toContainEqual(mockTarefa);
   });
+  
 
   it("atualiza uma tarefa existente com sucesso", async () => {
     const tarefaEditada = {
